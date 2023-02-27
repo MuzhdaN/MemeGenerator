@@ -6,9 +6,35 @@
 }
 
 body {
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  width: 70%;
   min-height: 100vh;
+  background: #F5F5F5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.header {
+  background: linear-gradient(90deg, #747bff 1.18%, #A626D3 100%);
+  display:flex;
+  align-items: center;
+  padding: 1.25rem;
+  height: 65px;
+  color: #fff;
+}
+
+.logo {
+  height: 100%;
+  margin-right: 6px;
+}
+
+.header-title {
+  font-size: 20px;
+  margin-right: auto;
+}
+
+.header-subheading {
+  font-weight: 500;
+} 
