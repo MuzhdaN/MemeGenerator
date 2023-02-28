@@ -16,6 +16,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+/* Header */
 .header {
   background: linear-gradient(90deg, #747bff 1.18%, #A626D3 100%);
   display:flex;
@@ -37,4 +38,31 @@ body {
 
 .header-subheading {
   font-weight: 500;
+} 
+
+/* form */
+.form {
+  margin-top: 5rem;
+  display: grid;
+  grid-template: 40px 40px / 1fr 1fr;
+  gap: 17px;
+  grid-auto-flow: column;
+  padding: 2rem;
+}
+
+.form-input {
+  border-radius: 5px;
+  border: 1px solid #cbcbcb;
+  text-indent: 5px;
+}
+
+.form-btn {
+  grid-column: 1 / -1;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #747bff 1.18%, #c934ff 100%);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
 } 
