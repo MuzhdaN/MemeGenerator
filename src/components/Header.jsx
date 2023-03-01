@@ -5,7 +5,7 @@ export default function Header() {
     return(
         <div className='header'>
             <img 
-                src='/public/vite.svg'
+                src='public/meme.jpg'
                 className='logo' 
             />
             <h3 className='header-title'>Meme Generator</h3>
