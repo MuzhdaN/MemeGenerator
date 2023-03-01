@@ -1,13 +1,49 @@
 import React from 'react'
-
+import { toPng } from 'html-to-image'
+import download from "downloadjs"
 
 export default function Meme() {
 
     const [meme, setMeme] = React.useState({
-        topTex: "", 
+        topText: "", 
         bottomText: "", 
         randomImage: "http://i.imgflip.com/1bij.jpg" 
     })
+
+    // state for memes data from api
+    const [apiData, setApiData] = React.useState([])
+
+    // get the api data 
+    // React.useEffect(() => {
+    //     fetch("https://api.imgflip.com/get_memes")
+    //         .then(res => res.json())
+    //         .then(memesData => setApiData(memesData.data.memes))
+    //         
+    // }, [])
+
+    React.useEffect(() => {
+        async function getMemes() {
+            const res = await fetch("https://api.imgflip.com/get_memes")
+            const data = await res.json()
+            // const blob = await response.blob();
+            setApiData(data.data.memes)
+        }
+        getMemes()
+        
+    }, [])
+
+    // get the meme image from api
+    function getImage() {
+        const randomId = Math.floor(Math.random() * apiData.length)
+        const url = apiData[randomId].url
+        setMeme(prevState => {
+            return {
+                ...prevState, 
+                randomImage: url
+            }
+        })
+    }
+    
 
     // writing/addding the text from the form (input)
     function textChanged(event) {
@@ -20,9 +56,11 @@ export default function Meme() {
         })
     }
 
+
+
     return(
         <main>
-            <form className='form'>
+            <div className='form'>
                 <input
                     type="text"
                     placeholder='Top Text'
@@ -40,11 +78,19 @@ export default function Meme() {
                     onChange={textChanged}
                 />
 
-                <button className='form-btn'>Change the meme image 🖼</button>
+                <button className='btn' onClick={getImage}>
+                    Change the meme image 🖼
+                </button>
+            </div>
+            <div className='meme-image-section' id='image-section'>
+                <img src={meme.randomImage} className='meme-image' id='im' />
+                <h3 className='text topText'>{meme.topText}</h3>
+                <h3 className='text bottomText'>{meme.bottomText}</h3>
+            </div>
+            <button className='btn save-btn' onClick={downloadMeme} >
+                    Save
+            </button>
 
-            </form>
-            <h3>{meme.topText}</h3>
-            <h3>{meme.bottomText}</h3>
         </main>
     )
 } 
