@@ -56,7 +56,14 @@ export default function Meme() {
         })
     }
 
-
+    // download meme
+    const canvas = document.getElementById("image-section");
+    function downloadMeme() {
+        toPng(canvas)
+            .then(memeUrl => {
+                download(memeUrl, "meme.png")
+            })
+    }
 
     return(
         <main>
