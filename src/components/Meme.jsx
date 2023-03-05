@@ -86,7 +86,7 @@ export default function Meme() {
                 />
 
                 <button className='btn' onClick={getImage}>
-                    Change the meme image 🖼
+                    Change the meme image 👻 
                 </button>
             </div>
             <div className='meme-image-section' id='image-section'>
