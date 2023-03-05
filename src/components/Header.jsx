@@ -9,7 +9,7 @@ export default function Header() {
                 className='logo' 
             />
             <h3 className='header-title'>Meme Generator</h3>
-            <h4 className='header-subheading'>React course - project 4</h4>
+            <h4 className='header-subheading'>project 4</h4>
         </div>
     )
 }
