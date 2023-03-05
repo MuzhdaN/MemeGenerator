@@ -14,13 +14,6 @@ export default function Meme() {
     const [apiData, setApiData] = React.useState([])
 
     // get the api data 
-    // React.useEffect(() => {
-    //     fetch("https://api.imgflip.com/get_memes")
-    //         .then(res => res.json())
-    //         .then(memesData => setApiData(memesData.data.memes))
-    //         
-    // }, [])
-
     React.useEffect(() => {
         async function getMemes() {
             const res = await fetch("https://api.imgflip.com/get_memes")
@@ -97,7 +90,6 @@ export default function Meme() {
             <button className='btn save-btn' onClick={downloadMeme} >
                     Save
             </button>
-
         </main>
     )
 } 
