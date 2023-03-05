@@ -31,18 +31,16 @@
 
 
 /* body */
-
 main {
   width: fit-content;
   margin: auto;
 }
 
 .form {
-  margin-top: 3rem;
+  margin-top: 2rem;
   display: grid;
   grid-template: 40px 40px / 1fr 1fr;
   gap: 17px;
-  /* margin-bottom: 1rem; */
   padding: 1rem;
 }
 
@@ -73,7 +71,6 @@ main {
 .meme-image {
   border-radius: 13px;
   max-width: 100%;
-  /* height: 70vh; */
   object-fit: contain;
   object-position: inherit;
 }
@@ -108,8 +105,16 @@ main {
   font-weight: bolder;
 }
 
-/* Hover over both buttons */
+/* Hover for both buttons */
 .btn:hover {
   background: linear-gradient(90deg, #c934ff 1.18%, #747bff 100%);
   font-size:large;
+}
+
+
+/* responsivess for phone devices */
+@media only screen and (max-width: 600px) {
+  .meme-image-section {
+    margin: 1.2rem;
+  }
 }
